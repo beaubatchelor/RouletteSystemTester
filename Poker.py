@@ -2,9 +2,9 @@ from random import randrange
 
 
 
-class texas_hold_em():
+class Texas_hold_em():
     
-    def __init__(self):
+    def __init__(self, players_list):
         self.spades_deck = ['1 of Spades', '2 of Spades', '3 of Spades', '4 of Spades', '5 of Spades', '6 of Spades',
          '7 of Spades', '8 of Spades', '9 of Spades', '10 of Spades', 'Jack of Spades', 'Queen of Spades', 'King of Spades']
 
@@ -19,27 +19,47 @@ class texas_hold_em():
 
         self.entire_deck = self.spades_deck + self.clubs_deck + self.hearts_deck + self.diamonds_deck
 
-        self.my_hand = []
+        self.players_list = players_list
 
     def deal_cards(self):
-        if self.my_hand:
-            self.my_hand
-        else:
-            self.my_hand.append(self.random_card())
-            self.entire_deck.remove(self.my_hand[0]) 
-            self.my_hand.append(self.random_card()) 
-            self.entire_deck.remove(self.my_hand[1])
-
-        return self.my_hand
+        for player in self.players_list:
+            if player['player_hand']:
+                player['player_hand']
+            else:
+                player['player_hand'].append(self.random_card())
+                self.entire_deck.remove(player['player_hand'][0]) 
+                player['player_hand'].append(self.random_card()) 
+                self.entire_deck.remove(player['player_hand'][1])
+        return self.players_list
 
     def random_card(self):
-        suit = ['Spade' , 'Club' , 'Diamond' , 'Heart']
-        value = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
-        suit_sel = suit[randrange(4)]
-        value_sel = value[randrange(13)]
-        return value_sel + ' of ' + suit_sel + 's'
+        card = ''
+        while card not in self.entire_deck:
+            suit = ['Spade' , 'Club' , 'Diamond' , 'Heart']
+            value = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
+            suit_sel = suit[randrange(4)]
+            value_sel = value[randrange(13)]
+            card = value_sel + ' of ' + suit_sel + 's'
 
-first = texas_hold_em()
+        return card
 
-print(first.deal_cards())
-print(len(first.entire_deck))
+
+
+class Player():
+
+    def __init__(self, name, stack):
+        self.name = str(name).title()
+        self.stack = int(stack)
+        self.player_hand = []
+
+
+########################################Testing Below
+
+jack = Player("jack", 3000)
+jane = Player('jAne', 4000)
+
+player_list = [jack.__dict__, jane.__dict__]
+
+game = Texas_hold_em(player_list)
+game.deal_cards()
+print(game.__dict__)
