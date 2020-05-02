@@ -21,6 +21,14 @@ class Texas_hold_em():
 
         self.players_list = players_list
 
+        self.pot = 0
+
+    def bet(self, bet):
+        bet = input('Would you like to bet?')
+        self.pot += bet
+        player['stack'] -= bet  
+            
+
     def deal_cards(self):
         for player in self.players_list:
             if player['player_hand']:
