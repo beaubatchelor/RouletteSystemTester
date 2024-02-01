@@ -3,13 +3,13 @@ import random
 
 
 outside_bets_dict = {
-'black' : {'2_black' : [2, 0],'4_black' : [2, 0],'6_black' : [2, 0],'8_black' : [2, 0],'10_black' : [2, 0],'11_black' : [2, 0],'13_black' : [2, 0],
-			'15_black' : [2, 0],'17_black' : [2, 0],'20_black' : [2, 0],'22_black' : [2, 0],'24_black' : [2, 0],'26_black' : [2, 0],'28_black' : [2, 0],
-			'29_black' : [2, 0],'31_black' : [2, 0], '33_black' : [2, 0],'35_black' : [2, 0]},
+'black' : {'2_blackBet' : [2, 0],'4_blackBet' : [2, 0],'6_blackBet' : [2, 0],'8_blackBet' : [2, 0],'10_blackBet' : [2, 0],'11_blackBet' : [2, 0],'13_blackBet' : [2, 0],
+			'15_blackBet' : [2, 0],'17_blackBet' : [2, 0],'20_blackBet' : [2, 0],'22_blackBet' : [2, 0],'24_blackBet' : [2, 0],'26_blackBet' : [2, 0],'28_blackBet' : [2, 0],
+			'29_blackBet' : [2, 0],'31_blackBet' : [2, 0], '33_blackBet' : [2, 0],'35_blackBet' : [2, 0]},
 
-'red' : {'1_red' : [2, 0],'3_red' : [2, 0],'5_red' : [2, 0],'7_red' : [2, 0],'9_red' : [2, 0],'12_red' : [2, 0],'14_red' : [2, 0],
-			'16_red' : [2, 0],'18_red' : [2, 0],'19_red' : [2, 0],'21_red' : [2, 0],'23_red' : [2, 0],'25_red' : [2, 0],'27_red' : [2, 0],
-			'30_red' : [2, 0],'32_red' : [2, 0], '34_red' : [2, 0],'36_red' : [2, 0]},
+'red' : {'1_redBet' : [2, 0],'3_redBet' : [2, 0],'5_redBet' : [2, 0],'7_redBet' : [2, 0],'9_redBet' : [2, 0],'12_redBet' : [2, 0],'14_redBet' : [2, 0],
+			'16_redBet' : [2, 0],'18_redBet' : [2, 0],'19_redBet' : [2, 0],'21_redBet' : [2, 0],'23_redBet' : [2, 0],'25_redBet' : [2, 0],'27_redBet' : [2, 0],
+			'30_redBet' : [2, 0],'32_redBet' : [2, 0], '34_redBet' : [2, 0],'36_redBet' : [2, 0]},
 
 'col_1st' : {'1_first' : [3, 0],'4_first' : [3, 0],'7_first' : [3, 0],'10_first' : [3, 0],'13_first' : [3, 0],'16_first' : [3, 0],'19_first' : [3, 0],
 				'22_first' : [3, 0], '25_first' : [3, 0],'28_first' : [3, 0],'31_first' : [3, 0],'34_first' : [3, 0]},
